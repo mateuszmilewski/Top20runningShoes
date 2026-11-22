@@ -1,142 +1,263 @@
 <!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex, nofollow, noarchive"><meta name="description" content="Niekomercyjna, niezależna wizualizacja 20 modeli butów biegowych na podstawie pomiarów laboratoryjnych RunRepeat: forefoot shock absorption, energy return i Asker C."><meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Forefoot Lab · TOP 20 (RunRepeat data)</title>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Niezależna, niekomercyjna wizualizacja: 100 najlżejszych butów biegowych, shock absorption i energy return przodostopia. Dane laboratoryjne RunRepeat.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Forefoot Lab V2 · TOP 100</title>
 <style>
-:root {color-scheme:dark; --bg:#080d17;--card:#101b2a;--card2:#0d1724;--text:#ebf5ff;--muted:#96a9bd;--border:#24394d;--cyan:#7de0d4;--blue:#69a5e3;--gold:#fac577;}
-*{box-sizing:border-box} html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(ellipse 75% 32% at 51% -6%,#1d3550 0%,transparent 74%),var(--bg);font-feature-settings:'tnum'}
-main{max-width:1250px;margin:auto;padding:24px clamp(12px,3.2vw,38px) 38px}
-header{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:9px 0 21px}
-.kicker{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:.19em;font-weight:750;margin:0 0 7px}
-h1{font-size:clamp(26px,4.5vw,42px);line-height:1.08;margin:0;letter-spacing:-.045em;font-weight:820}
-header p{margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
-.pill{color:#bbd9ea;background:#152437;border:1px solid #2a4155;padding:8px 12px;border-radius:100px;font-size:12px;white-space:nowrap}
-.panel{border:1px solid var(--border);background:linear-gradient(155deg,#122034 0%,#0b1421 100%);border-radius:16px;box-shadow:0 20px 44px #0004;overflow:hidden}
-.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 20px 0}.toolbar h2{font-size:15px;letter-spacing:.01em;margin:0;font-weight:680}.hint{color:var(--muted);font-size:12px}.topright{display:flex;align-items:center;gap:12px}
-button{font:inherit;font-size:12px;color:#caedff;background:#183048;border:1px solid #36556b;padding:8px 11px;border-radius:8px;cursor:pointer}button:hover{background:#24445d}button:focus-visible,a:focus-visible,tr:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
-#plot{height:min(72vh,730px);min-height:530px;width:100%}
-.graph-note{padding:0 18px 16px;color:#a0b5c7;font-size:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.graph-note b{color:var(--cyan)}.dot{display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;margin-right:5px;vertical-align:middle}
-.section-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:space-between;margin:27px 1px 14px}.section-head h2{margin:0;font-size:20px;letter-spacing:-.02em}.section-head span{font-size:12px;color:var(--muted)}
-.table-card{background:#0e1928;border:1px solid var(--border);border-radius:14px;overflow:hidden}.table-scroller{overflow:auto;max-width:100%}table{border-collapse:collapse;width:100%;min-width:620px;font-variant-numeric:tabular-nums}thead{background:#17273a}th{color:#b6c9d8;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:right;padding:14px 18px;font-weight:720;white-space:nowrap}th:first-child,td:first-child{text-align:center}th:nth-child(2),td:nth-child(2){text-align:left}
-td{padding:11px 18px;border-top:1px solid #1d2d3f;font-size:13px;text-align:right}tbody tr{transition:background .1s ease;cursor:pointer}tbody tr:hover,tbody tr.highlighted{background:#1a3549}tbody tr.selected{background:#25465c;box-shadow:inset 3px 0 0 var(--cyan)}
-.rank{color:#66889c;font-size:12px}.shoe{font-weight:640;color:#e4f2ff}.shoe a{color:inherit;text-decoration:none}.shoe a:hover{color:var(--cyan);text-decoration:underline}.sa{color:#9fe3f0;font-weight:650}.er{color:#f9d39b}.missing{color:#eeae8f}.footnote{padding:12px 17px;border-top:1px solid #1d2d3f;color:#92a8bc;font-size:12px}
-footer{margin-top:27px;border-top:1px solid var(--border);padding:20px 2px 8px;color:#99afc2}.footer-title{font-size:13px;font-weight:750;color:#e6f4ff;letter-spacing:.04em;text-transform:uppercase;margin:0 0 15px}.legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.legend-card{padding:13px 14px;background:#101c2b;border:1px solid var(--border);border-radius:10px}.legend-card b{display:block;color:#e6f6ff;font-size:13px;margin-bottom:4px}.legend-card span{color:#9db3c4;font-size:12px;line-height:1.45;display:block}.gradient-row{display:flex;gap:10px;align-items:center;margin:15px 0 18px;font-size:12px}.gradient{height:8px;width:160px;max-width:40vw;border-radius:100px;background:linear-gradient(90deg,#568dcc,#7bd8d2,#f9c77d)}.subtle{font-size:11px;line-height:1.65;color:#8299ab}.subtle a{color:#b1ddea;text-underline-offset:2px}.legal{max-width:1100px;margin:12px 0 0;font-size:11px;line-height:1.6;color:#849caf}
-@media(max-width:700px){main{padding-top:18px}.pill{font-size:10px}.toolbar{padding:14px 14px 0}.hint{font-size:11px}#plot{height:530px;min-height:470px}.graph-note{padding-left:13px;padding-right:13px}.legend{grid-template-columns:1fr}.section-head{margin-top:23px}td{padding:11px 12px}th{padding:12px}header p{font-size:12px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}tbody tr{transition:none}}
-#plot{position:relative;user-select:none}svg.chart-svg{display:block;width:100%;height:100%;touch-action:none;cursor:grab}svg.chart-svg:active{cursor:grabbing}.chart-tooltip{position:absolute;pointer-events:none;z-index:10;background:#17293c;color:#ecf7ff;border:1px solid #4a8293;border-radius:8px;padding:10px 12px;font-size:12px;box-shadow:0 5px 20px #0008;max-width:250px}.chart-tooltip b,.chart-tooltip span{display:block}.chart-tooltip span{color:#adcad7;margin-top:4px}@media(max-width:700px){#plot{height:440px;min-height:410px}}</style>
-</head><body><main>
-<header><div><p class="kicker">FOREFOOT LAB / NON-COMMERCIAL EXPERIMENT</p><h1>TOP 20 · Forefoot Performance</h1><p>Shock absorption × Energy return × Midsole softness &nbsp;·&nbsp; Dane laboratoryjne: <a href="https://runrepeat.com/" rel="noopener noreferrer" target="_blank" style="color:#a7e5e3">RunRepeat</a></p></div><span class="pill">Niezależna wizualizacja · 2026</span></header>
+:root{color-scheme:dark;--bg:#090e17;--panel:#101c2b;--line:#26394c;--text:#eaf3fd;--muted:#91a5b9;--blue:#82ddeb;--gold:#f9c981}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 70% 32% at 52% -7%,#1a3651,transparent 80%),var(--bg);color:var(--text);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+main{max-width:1320px;padding:25px clamp(12px,3vw,38px) 36px;margin:auto}a{color:#9ddbe5;text-underline-offset:2px}
+header{display:flex;gap:20px;align-items:end;justify-content:space-between;flex-wrap:wrap;margin:7px 0 22px}
+.eyebrow{color:#85d7d7;font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:800;margin:0 0 9px}
+h1{margin:0;font-size:clamp(28px,4.9vw,46px);letter-spacing:-.055em;line-height:1.1}header p{margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.badge{font-size:11px;color:#bfd7e6;padding:8px 12px;border-radius:99px;border:1px solid #325065;background:#15283a;white-space:nowrap}
+.panel{background:linear-gradient(150deg,#142239,#0b1522 85%);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 20px 45px #0004}
+.panel-top{padding:16px 18px 3px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+h2{margin:0;font-size:16px;font-weight:720;letter-spacing:-.015em}.muted{color:var(--muted);font-size:11px}.chart-hint{margin-top:5px}
+.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}select,button,input{background:#172e43;border:1px solid #38586f;color:#d6ecf9;border-radius:8px;font:inherit;font-size:12px;padding:8px 10px}button{cursor:pointer}button:hover{background:#23445e}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible,tr:focus-visible{outline:2px solid #89e2e3;outline-offset:2px}
+#plot{height:min(71vh,720px);min-height:510px;position:relative;user-select:none}
+.chart-svg{width:100%;height:100%;display:block;touch-action:none;cursor:grab}.chart-svg:active{cursor:grabbing}
+.popup{position:absolute;z-index:4;max-width:183px;min-width:110px;border:1px solid #6a98aa;border-radius:7px;background:#15273a;box-shadow:0 9px 22px #000b;padding:7px 9px;font-size:10px;line-height:1.4;pointer-events:auto}
+.popup[hidden]{display:none}.popup strong{display:block;font-size:10px;font-weight:720;overflow-wrap:anywhere}.popup small{display:block;margin-top:4px;font-size:9px;color:#b0c7d7;line-height:1.4}.popup a{display:inline-block;margin-top:4px;font-size:9px}.popup button{position:absolute;right:4px;top:2px;border:0;background:transparent;padding:0 3px;font-size:12px;color:#a8c1d0}
+.chart-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:0 17px 15px;color:#9ab2c4;font-size:11px}.light-dot{width:8px;height:8px;border-radius:50%;background:#f3c782;display:inline-block;vertical-align:middle;margin-right:5px}
+.chart-bar strong{color:#cdeff0}.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:#bad0dd;font-size:13px;line-height:1.5;z-index:1;pointer-events:none}.loading[hidden]{display:none}
+.rank-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:27px 1px 13px}.rank-head h2{font-size:21px}.rank-head .muted{margin-top:6px}
+.table-panel{border:1px solid var(--line);background:#0e1928;border-radius:13px;overflow:hidden}
+.table-scroll{max-height:690px;overflow:auto;scrollbar-color:#46617a #101c2b}table{border-collapse:collapse;width:100%;min-width:630px}th{position:sticky;top:0;z-index:2;background:#1a2d40;color:#b5cfdd;font-size:10px;text-transform:uppercase;letter-spacing:.08em;text-align:right;padding:13px 15px;white-space:nowrap}td{font-size:12px;padding:10px 15px;text-align:right;border-top:1px solid #213145}th:first-child,td:first-child{text-align:center}th:nth-child(2),td:nth-child(2){text-align:left}tbody tr{cursor:pointer}tbody tr:hover{background:#20374c}tbody tr.selected{background:#26445a;box-shadow:inset 3px 0 #80e1e0}.name{color:#e5f3fd;font-weight:620}.name a{color:inherit;text-decoration:none}.name a:hover{text-decoration:underline;color:#a3eff0}.ranking{color:#839cb3}.weight{color:#b7d2ee}.sa{color:#8fdee9}.er{color:#facf92}
+.table-foot{border-top:1px solid #26384b;padding:10px 14px;font-size:11px;color:#95a9bc}
+footer{margin-top:30px;border-top:1px solid var(--line);padding-top:20px}footer h2{font-size:14px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.leg-card{padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:#111e2d}.leg-card b{display:block;font-size:12px;margin-bottom:4px;color:#eef7ff}.leg-card span{display:block;font-size:11px;color:#a1b5c6;line-height:1.5}.color-row{display:flex;gap:10px;align-items:center;margin:16px 0 17px;color:#9eb4c6;font-size:11px}.gradient{width:158px;height:8px;background:linear-gradient(90deg,#5f91cd,#78d7d1,#f8c77c);border-radius:15px}.source,.legal{font-size:10.5px;color:#8ca1b5;line-height:1.65}.legal{color:#8195a9;margin-top:12px}
+@media(max-width:700px){main{padding-top:19px}.badge{font-size:10px}#plot{height:470px;min-height:460px}.panel-top{padding:14px 12px 2px}.actions{width:100%}select{flex:1;max-width:calc(100% - 95px)}.chart-bar{padding:0 12px 13px;font-size:10px}.legend{grid-template-columns:1fr}.rank-head h2{font-size:18px}td{padding:10px 11px}th{padding:11px}header p{font-size:11px}.popup{max-width:160px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body><main>
+<header>
+ <div><p class="eyebrow">Forefoot Lab / V2 / independent research project</p><h1>TOP 100 · Weight × Forefoot</h1><p>Waga (g) × Shock absorption (SA) × Energy return (%) &nbsp;·&nbsp; Źródło pomiarów: <a href="https://runrepeat.com/" target="_blank" rel="noopener noreferrer">RunRepeat</a></p></div>
+ <span class="badge">Niekomercyjny eksperyment · 2026</span>
+</header>
 <section class="panel" aria-label="Interaktywny wykres 3D">
- <div class="toolbar"><div><h2>Mapa parametrów 3D</h2><span class="hint">Przeciągnij, aby obrócić · kółko myszy = zoom · wskaż punkt</span></div><div class="topright"><button type="button" id="reset" title="Przywróć początkową kamerę">Reset widoku</button></div></div>
- <div id="plot" role="img" aria-label="Interaktywny wykres 3D: 19 butów, trzy osie: amortyzacja przedniej części, zwrot energii przodu i twardość pianki Asker C"></div>
- <div class="graph-note"><span><span class="dot"></span>Kolor punktu = energy return</span><span>Na wykresie: <b>19/20</b> modeli (porównywalna skala AC)</span></div>
+ <div class="panel-top">
+  <div><h2>Interaktywny wykres 3D</h2><div class="muted chart-hint">Przeciągnij = obrót · kółko / gest = zoom · kliknij kropkę = nazwa buta</div></div>
+  <div class="actions"><label for="sort" class="muted">TOP 100:</label><select id="sort" aria-label="Kryterium wyboru 100 modeli"><option value="weight">Najlżejsze (g) ↑</option><option value="sa">Najwyższe forefoot SA ↓</option></select><button id="reset" type="button">Reset</button></div>
+ </div>
+ <div id="plot" aria-label="Interaktywny wykres 3D z wagą, amortyzacją i zwrotem energii w przodostopiu">
+  <div id="loading" class="loading" role="status">Wczytywanie danych pomiarowych…</div>
+  <div class="popup" id="popup" hidden><button type="button" id="close-popup" aria-label="Zamknij">×</button><strong id="popup-name"></strong><small id="popup-metrics"></small><a id="popup-link" target="_blank" rel="noopener noreferrer">RunRepeat ↗</a></div>
+ </div>
+ <div class="chart-bar"><span><span class="light-dot"></span>Kolor = Energy return forefoot</span><span id="counter">Punkty: —</span><span id="status">Źródło: publiczna migawka Shoe Lab / RunRepeat</span></div>
 </section>
-<section id="ranking"><div class="section-head"><h2>Lista 20 modeli</h2><span>Sortowanie: Forefoot SA ↓ · Kliknij wiersz, aby wyróżnić punkt</span></div>
-<div class="table-card"><div class="table-scroller"><table><thead><tr><th scope="col">#</th><th scope="col">Model ↗ RunRepeat</th><th scope="col">SA · forefoot</th><th scope="col">ER · forefoot</th><th scope="col">AC · pianka</th></tr></thead><tbody id="shoes"></tbody></table></div>
-<div class="footnote">* Mizuno Wave Sky 9: RunRepeat podaje <strong>14,5 HA</strong> (starsza skala Shore A), a nie AC. Model pozostaje na liście, ale nie jest zaznaczony na wykresie 3D.</div></div></section>
-<footer><p class="footer-title">Legenda i źródła</p>
-<div class="legend">
-<div class="legend-card"><b>X · Shock absorption (SA)</b><span>Absorpcja uderzenia w przodostopiu. Większa wartość = więcej amortyzacji w teście.</span></div>
-<div class="legend-card"><b>Y · Energy return (%)</b><span>Zwrot energii w przodostopiu. Większa wartość = więcej energii mechanicznej oddanej w teście.</span></div>
-<div class="legend-card"><b>Z · Midsole softness (AC)</b><span>Twardość pianki w skali Asker C. <strong>Niższa wartość = miększa pianka.</strong> Nie jest to pomiar wyłącznie przodostopia.</span></div>
-</div>
-<div class="gradient-row"><div class="gradient" aria-hidden="true"></div><span>Energy return: niższy (niebieski) → wyższy (złoty)</span></div>
-<div class="subtle">Źródło pomiarów: <a href="https://runrepeat.com/" rel="noopener noreferrer" target="_blank">RunRepeat</a> — indywidualne testy obuwia oraz <a href="https://runrepeat.com/testing-methodology" rel="noopener noreferrer" target="_blank">metodologia laboratoryjna</a>. Kliknięcie nazwy modelu otwiera jego stronę źródłową. Opracowanie autorskie: wybór, porządkowanie i interaktywna prezentacja danych; stan zestawienia sporządzonego 21.11.2026. Nie jest to oficjalny ranking ani rekomendacja RunRepeat. Wartości mogą ulegać zmianom.</div>
-<p class="legal">Projekt wyłącznie demonstracyjny, edukacyjny i niekomercyjny. Bez reklam, analityki i linków afiliacyjnych. Autor nie jest powiązany, sponsorowany ani wspierany przez RunRepeat lub producentów obuwia. Prawa do oryginalnych pomiarów, treści, nazw i znaków towarowych należą do właściwych uprawnionych podmiotów. Podanie źródła nie stanowi licencji ani zezwolenia na dalszą redystrybucję danych. W sprawie praw do danych, wykorzystania lub prośby o usunięcie materiału prosimy o kontakt z właścicielem repozytorium na GitHub. Żadne zdjęcia produktów ani teksty recenzji nie zostały tu skopiowane.</p>
-</footer></main>
+<section id="ranking"><div class="rank-head"><div><h2>Lista modeli</h2><div class="muted">Wybierz wiersz, aby wyróżnić punkt na wykresie</div></div><span class="muted" id="rank-label">TOP 100 · masa rosnąco</span></div>
+ <div class="table-panel"><div class="table-scroll"><table><thead><tr><th>#</th><th>Model / RunRepeat ↗</th><th>Waga (g)</th><th>Forefoot SA</th><th>Forefoot ER</th></tr></thead><tbody id="shoes"><tr><td colspan="5" style="text-align:center;color:#9aafc0">Pobieranie danych…</td></tr></tbody></table></div>
+ <div class="table-foot">100 modeli z kompletnym zestawem 3 pomiarów, wybranych według bieżącego kryterium. Waga dotyczy pojedynczego buta w rozmiarze testowym RunRepeat.</div></div>
+</section>
+<footer>
+ <h2>Legenda i źródła</h2>
+ <div class="legend">
+  <div class="leg-card"><b>X · Waga (g) ↓</b><span>Masa pojedynczego buta. Niższa wartość oznacza lżejszy model.</span></div>
+  <div class="leg-card"><b>Y · Shock absorption forefoot (SA) ↑</b><span>Amortyzacja uderzenia w przedniej części buta. Wyżej oznacza większą absorpcję w teście.</span></div>
+  <div class="leg-card"><b>Z · Energy return forefoot (%) ↑</b><span>Udział energii mechanicznej oddanej podczas testu przodostopia. Wyżej oznacza większy zwrot.</span></div>
+ </div>
+ <div class="color-row"><div class="gradient" aria-hidden="true"></div><span>Kolor punktu: niższy ER (niebieski) → wyższy ER (złoty)</span></div>
+ <div class="source">Oryginalne pomiary i prawa do danych: <a href="https://runrepeat.com/" target="_blank" rel="noopener noreferrer">RunRepeat</a>; <a href="https://runrepeat.com/testing-methodology" target="_blank" rel="noopener noreferrer">metodologia badań</a>. Zestawienie technicznie odczytuje publiczny plik CSV projektu <a href="https://github.com/rocker1904/shoe-lab" target="_blank" rel="noopener noreferrer">Shoe Lab (rocker1904)</a> i przelicza ranking w przeglądarce. Dane nie są własnymi pomiarami autora strony; ich kompletność, aktualność i poprawność zależą od źródeł. Nie jest to oficjalny ranking RunRepeat.</div>
+ <div class="legal">Niezależna, demonstracyjna i niekomercyjna wizualizacja bez reklam, śledzenia ani linków afiliacyjnych. Autor nie jest związany z RunRepeat, Shoe Lab ani producentami butów. Nazwy i znaki towarowe należą do ich właścicieli. Brak zdjęć i kopii tekstów recenzji. Atrybucja i niekomercyjny charakter NIE oznaczają uzyskania licencji na dane; przed ich publiczną redystrybucją należy wyjaśnić prawa z RunRepeat. W kwestiach praw do materiałów i usunięcia treści można kontaktować się poprzez właściciela repozytorium GitHub. Kod strony jest odrębny od praw do danych źródłowych.</div>
+</footer>
+</main>
 <script>
 'use strict';
-const SHOES = [{"rank":1,"name":"ASICS Superblast 3","sa":153.49,"er":67.47,"ac":22.8,"ha":null,"url":"https://runrepeat.com/asics-superblast-3"},{"rank":2,"name":"Nike Vomero Premium","sa":147.36,"er":64.4,"ac":34.5,"ha":null,"url":"https://runrepeat.com/nike-vomero-premium"},{"rank":3,"name":"Saucony Paramount Max","sa":146.89,"er":80.29,"ac":28.3,"ha":null,"url":"https://runrepeat.com/saucony-paramount-max"},{"rank":4,"name":"Mizuno Wave Sky 9","sa":145.33,"er":47.1,"ac":null,"ha":14.5,"url":"https://runrepeat.com/mizuno-wave-sky-9"},{"rank":5,"name":"adidas Hyperboost Edge","sa":144.76,"er":72.83,"ac":32.5,"ha":null,"url":"https://runrepeat.com/adidas-hyperboost-edge"},{"rank":6,"name":"ASICS Megablast","sa":144.05,"er":73.8,"ac":30.8,"ha":null,"url":"https://runrepeat.com/asics-megablast"},{"rank":7,"name":"New Balance Fresh Foam X More v6","sa":143.72,"er":58.8,"ac":27.5,"ha":null,"url":"https://runrepeat.com/new-balance-fresh-foam-x-more-v6"},{"rank":8,"name":"adidas Adizero Adios Pro Evo 3","sa":141.56,"er":80.2,"ac":21.0,"ha":null,"url":"https://runrepeat.com/adidas-adizero-adios-pro-evo-3"},{"rank":9,"name":"HOKA Skyward X 2","sa":141.34,"er":67.6,"ac":31.9,"ha":null,"url":"https://runrepeat.com/hoka-skyward-x-2"},{"rank":10,"name":"ASICS Sonicblast 2","sa":140.88,"er":68.69,"ac":31.1,"ha":null,"url":"https://runrepeat.com/uk/asics-sonicblast-2"},{"rank":11,"name":"Saucony Hurricane 25","sa":140.47,"er":74.0,"ac":33.6,"ha":null,"url":"https://runrepeat.com/saucony-hurricane-25"},{"rank":12,"name":"PUMA MagMax Nitro","sa":138.58,"er":57.27,"ac":41.3,"ha":null,"url":"https://runrepeat.com/puma-magmax-nitro"},{"rank":13,"name":"HOKA Skyward X","sa":138.53,"er":68.51,"ac":36.5,"ha":null,"url":"https://runrepeat.com/hoka-skyward-x"},{"rank":14,"name":"ASICS Superblast 2","sa":138.49,"er":65.55,"ac":35.2,"ha":null,"url":"https://runrepeat.com/asics-superblast-2"},{"rank":15,"name":"Brooks Glycerin Max","sa":138.14,"er":51.99,"ac":31.9,"ha":null,"url":"https://runrepeat.com/brooks-glycerin-max"},{"rank":16,"name":"Saucony Triumph 24","sa":137.52,"er":78.53,"ac":37.5,"ha":null,"url":"https://runrepeat.com/saucony-triumph-24"},{"rank":17,"name":"Mizuno Neo Vista 2","sa":136.75,"er":59.83,"ac":21.6,"ha":null,"url":"https://runrepeat.com/mizuno-neo-vista-2"},{"rank":18,"name":"PUMA MagMax Nitro 2","sa":136.59,"er":54.6,"ac":38.1,"ha":null,"url":"https://runrepeat.com/puma-mag-max-nitro-2"},{"rank":19,"name":"HOKA Cielo X1 3.0","sa":136.52,"er":70.37,"ac":32.9,"ha":null,"url":"https://runrepeat.com/hoka-cielo-x-1-3-0"},{"rank":20,"name":"Saucony Triumph 23","sa":136.43,"er":71.2,"ac":42.8,"ha":null,"url":"https://runrepeat.com/saucony-triumph-23"}];
-const chartShoes = SHOES.filter(d=>d.ac!==null);
-const table = document.getElementById('shoes');
-const plot = document.getElementById('plot');
-const fmt=v=>v.toFixed(1).replace('.',',');
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const xmlns='http://www.w3.org/2000/svg';
-let yaw=-0.73,pitch=0.48,zoom=1,selected=null,drag=null,dragged=false;
-const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
-const rgb=(s)=>s.match(/\w\w/g).map(c=>parseInt(c,16));
+// No remote JS, no tracking, no server. Source CSV is fetched when the static page loads.
+const SOURCES=[
+ 'https://raw.githubusercontent.com/rocker1904/shoe-lab/main/data/shoes.csv',
+ 'https://cdn.jsdelivr.net/gh/rocker1904/shoe-lab@main/data/shoes.csv'
+];
+const el=id=>document.getElementById(id);
+const plot=el('plot'), tbody=el('shoes'), popup=el('popup');
+const SVG_NS='http://www.w3.org/2000/svg';
+let all=[], shown=[], mode='weight', selected=null, yaw=-.72, pitch=.49, zoom=1, drag=null, dragged=false, bounds=null;
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const fmt=(n,d=1)=>Number(n).toLocaleString('pl-PL',{minimumFractionDigits:d,maximumFractionDigits:d});
+const slugify=s=>String(s).trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+// RFC-4180 style reader, including BOM, quoted delimiters and embedded line breaks.
+function csvRows(src){
+ src=src.replace(/^\uFEFF/,'');let rows=[],row=[],cell='',quoted=false;
+ for(let i=0;i<src.length;i++){
+  const c=src[i];
+  if(c==='"'){if(quoted&&src[i+1]==='"'){cell+='"';i++}else quoted=!quoted;}
+  else if(c===','&&!quoted){row.push(cell);cell='';}
+  else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&src[i+1]==='\n')i++;row.push(cell);if(row.some(s=>s.trim()!==''))rows.push(row);row=[];cell='';}
+  else cell+=c;
+ }
+ row.push(cell);if(row.some(s=>s.trim()!==''))rows.push(row);
+ return rows;
+}
+function numeric(s){if(s==null)return null;const text=String(s).trim().replace(/\s/g,'');if(!text||text==='—'||text.toLowerCase()==='null')return null;const n=Number(text.replace(',','.'));return Number.isFinite(n)?n:null}
+function parseData(csv){
+ const rows=csvRows(csv);if(rows.length<110)throw Error('Zbyt mało wierszy w źródłowym CSV.');
+ const h=rows.shift().map(slugify);
+ const locate=(choices,pattern)=>{for(const c of choices){const i=h.indexOf(c);if(i>=0)return i}return h.findIndex(pattern)};
+ const ix={name:locate(['name','shoe-name','title'],s=>s==='model'),brand:locate(['brand'],s=>s.includes('brand')),slug:locate(['slug'],s=>s==='slug'),url:locate(['url','review-url'],s=>s.endsWith('url')),weight:locate(['weight','weight-g','weight-grams','shoe-weight'],s=>/^weight-/.test(s)),sa:locate(['shock-absorption-forefoot','forefoot-shock-absorption','shock-absorption-front'],s=>s.includes('shock')&&s.includes('absorp')&&s.includes('forefoot')),er:locate(['energy-return-forefoot','forefoot-energy-return'],s=>s.includes('energy')&&s.includes('return')&&s.includes('forefoot'))};
+ if(ix.weight<0||ix.sa<0||ix.er<0||ix.name<0)throw Error('Nie odnaleziono potrzebnych kolumn w CSV (weight, forefoot SA i ER).');
+ const result=[],seen=new Set();
+ for(const row of rows){
+  const get=k=>ix[k]>=0?(row[ix[k]]||'').trim():'';
+  const weight=numeric(get('weight')),sa=numeric(get('sa')),er=numeric(get('er'));
+  if(!(weight>0&&weight<700&&sa>0&&sa<300&&er>0&&er<=100))continue;
+  const name=get('name'),brand=get('brand'),slug=get('slug')||slugify(name);
+  const display=(brand&&!name.toLowerCase().startsWith(brand.toLowerCase()))?brand+' '+name:name;
+  if(!display||seen.has(slug))continue;
+  seen.add(slug);
+  const candidate=get('url');
+  let url='https://runrepeat.com/'+encodeURIComponent(slug);
+  if(/^https:\/\/([\w-]+\.)?runrepeat\.com\//i.test(candidate))url=candidate;
+  result.push({name:display,slug,url,weight,sa,er});
+ }
+ if(result.length<100)throw Error(`Źródło zawiera tylko ${result.length} modeli z kompletnymi pomiarami.`);
+ return result;
+}
+function filterData(){
+ shown=[...all].sort((a,b)=>mode==='weight'?(a.weight-b.weight||b.sa-a.sa):(b.sa-a.sa||a.weight-b.weight)).slice(0,100).map((s,i)=>({...s,rank:i+1}));
+ el('rank-label').textContent=mode==='weight'?'TOP 100 · najlżejsze (g) ↑':'TOP 100 · Forefoot SA ↓';
+ el('counter').textContent=`Punkty: ${shown.length} / pomiary: ${all.length}`;
+ selected=null;popup.hidden=true;renderTable();renderChart();
+}
+function renderTable(){
+ tbody.replaceChildren();
+ for(const s of shown){
+  const tr=document.createElement('tr');tr.dataset.slug=s.slug;tr.tabIndex=0;
+  const rank=document.createElement('td');rank.className='ranking';rank.textContent=String(s.rank).padStart(2,'0');
+  const tdname=document.createElement('td');tdname.className='name';const a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=s.name+' ↗';tdname.append(a);
+  const weight=document.createElement('td');weight.className='weight';weight.textContent=fmt(s.weight,0);
+  const sa=document.createElement('td');sa.className='sa';sa.textContent=fmt(s.sa);
+  const er=document.createElement('td');er.className='er';er.textContent=fmt(s.er)+'%';
+  tr.append(rank,tdname,weight,sa,er);
+  tr.addEventListener('click',e=>{if(e.target.closest('a'))return;selectShoe(s.slug,true)});
+  tr.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target===tr)selectShoe(s.slug,true)});
+  tbody.append(tr);
+ }
+}
+function selectShoe(slug,scroll=false){
+ selected=slug;
+ for(const tr of tbody.rows)tr.classList.toggle('selected',tr.dataset.slug===slug);
+ renderChart();
+ showPopup(shown.find(s=>s.slug===slug));
+ if(scroll)plot.scrollIntoView({behavior:'smooth',block:'center'});
+}
 function colorER(er){
- let start,end,t;
- if(er<63){start=rgb('568dcc');end=rgb('7bd8d2');t=clamp((er-45)/18,0,1)}
- else{start=rgb('7bd8d2');end=rgb('f9c77d');t=clamp((er-63)/19,0,1)}
- return '#'+start.map((c,i)=>Math.round(c+(end[i]-c)*t).toString(16).padStart(2,'0')).join('');
+ const lerp=(a,b,t)=>Math.round(a+(b-a)*t);
+ const c1=er<62?[95,145,205]:[119,214,211],c2=er<62?[119,214,211]:[249,199,126];
+ const t=clamp(er<62?(er-38)/(62-38):(er-62)/(84-62),0,1);
+ return 'rgb('+c1.map((v,i)=>lerp(v,c2[i],t)).join(',')+')';
 }
-table.innerHTML=SHOES.map(d=>`<tr data-rank="${d.rank}" tabindex="0" title="${d.ac===null?'Brak Asker C':'Kliknij, aby wyróżnić punkt na wykresie'}"><td class="rank">${String(d.rank).padStart(2,'0')}</td><td class="shoe"><a href="${d.url}" target="_blank" rel="noopener noreferrer">${esc(d.name)} ↗</a></td><td class="sa">${fmt(d.sa)}</td><td class="er">${fmt(d.er)}%</td><td class="${d.ac===null?'missing':''}">${d.ac===null?fmt(d.ha)+' HA *':fmt(d.ac)+' AC'}</td></tr>`).join('');
-const svg=document.createElementNS(xmlns,'svg');svg.setAttribute('class','chart-svg');svg.setAttribute('aria-label','Interaktywny wykres 3D, obracany przeciąganiem');
-const tooltip=document.createElement('div');tooltip.className='chart-tooltip';tooltip.style.display='none';
-plot.append(svg,tooltip);
-function S(tag,attrs={},text){const el=document.createElementNS(xmlns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);if(text!==undefined)el.textContent=text;return el}
-function P(x,y,z,w,h){
-  const co=Math.cos(yaw),si=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
-  const xx=x*co-y*si,yy=x*si+y*co,zz=z;
-  const depth=yy*cp-zz*sp;const yvertical=yy*sp+zz*cp;
-  const factor=Math.min(w/3.0,h/3.25)*zoom;
-  return {x:w*.50+xx*factor,y:h*.53-yvertical*factor,depth,scale:factor};
+function rangeOf(values){let lo=Math.min(...values),hi=Math.max(...values);if(lo===hi)hi=lo+1;const extra=(hi-lo)*.07;return [lo-extra,hi+extra]}
+function generateBounds(){
+ bounds={weight:rangeOf(shown.map(s=>s.weight)),sa:rangeOf(shown.map(s=>s.sa)),er:rangeOf(shown.map(s=>s.er))};
 }
-const V={sa:v=>((v-134)/22)*2-1,er:v=>((v-45)/37)*2-1,ac:v=>1-((v-18)/28)*2};
-const pt=(s,w,h)=>P(V.sa(s.sa),V.er(s.er),V.ac(s.ac),w,h);
-function line(group,a,b,col,width=1,opacity=1,style=''){
- group.appendChild(S('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:col,'stroke-width':width,'stroke-opacity':opacity,'stroke-dasharray':style}))
+function vec(s){const normalized=(value,k)=>(value-bounds[k][0])/(bounds[k][1]-bounds[k][0])*2-1;return [normalized(s.weight,'weight'),normalized(s.sa,'sa'),normalized(s.er,'er')]}
+function project(x,y,z,w,h){
+ const c=Math.cos(yaw),s=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ const xx=x*c-y*s,yy=x*s+y*c;
+ const depth=yy*cp-z*sp,vertical=yy*sp+z*cp;
+ const fac=Math.min(w/3.25,h/3.3)*zoom;
+ return {x:w*.5+xx*fac,y:h*.53-vertical*fac,depth};
 }
-function mark(group,pos,label,dx=0,dy=0,size=11,col='#a8bbca',anchor='middle'){
- group.appendChild(S('text',{x:pos.x+dx,y:pos.y+dy,fill:col,'font-size':size,'font-family':'system-ui,sans-serif','text-anchor':anchor},label));
+function element(tag,attrs={},text){const e=document.createElementNS(SVG_NS,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!=null)e.textContent=text;return e}
+const svg=element('svg',{class:'chart-svg','aria-label':'Interaktywny wykres 3D'});
+plot.insertBefore(svg,el('loading'));
+function line(g,a,b,stroke,opacity=.5,width=1){g.append(element('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke,'stroke-opacity':opacity,'stroke-width':width}))}
+function label(g,p,s,dx=0,dy=0,color='#afc5d2',size=10,anchor='middle'){g.append(element('text',{x:p.x+dx,y:p.y+dy,fill:color,'font-size':size,'font-family':'system-ui,sans-serif','text-anchor':anchor},s))}
+function showPopup(s){
+ if(!s||!bounds){popup.hidden=true;return}
+ el('popup-name').textContent=s.name;el('popup-metrics').textContent=`${fmt(s.weight,0)} g  ·  ${fmt(s.sa)} SA  ·  ${fmt(s.er)}% ER`;el('popup-link').href=s.url;
+ const rect=plot.getBoundingClientRect(),p=project(...vec(s),rect.width,rect.height);
+ // Keep the popup inside the chart while showing it close to the selected point.
+ popup.hidden=false;
+ popup.style.left=clamp(p.x+11,8,rect.width-Math.min(183,rect.width-12))+'px';
+ popup.style.top=clamp(p.y-57,8,rect.height-88)+'px';
 }
-function draw(){
- const rect=plot.getBoundingClientRect(),w=Math.max(320,rect.width),h=Math.max(390,rect.height);svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
- const base=P(0,0,0,w,h);
- svg.replaceChildren();
- const defs=S('defs');
- const halo=S('filter',{id:'point-halo',x:'-100%',y:'-100%',width:'300%',height:'300%'});
- halo.appendChild(S('feGaussianBlur',{stdDeviation:'5'}));defs.appendChild(halo);svg.appendChild(defs);
- const grid=S('g');
- // Six gridlines per axis on base face and two vertical faces.
+function renderChart(){
+ if(!shown.length)return;
+ generateBounds();
+ const r=plot.getBoundingClientRect(),w=Math.max(315,r.width),h=Math.max(400,r.height);
+ svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.replaceChildren();
+ const grid=element('g');
  for(let i=0;i<=5;i++){
-   const v=-1+2*i/5;
-   line(grid,P(v,-1,-1,w,h),P(v,1,-1,w,h),'#355167',.9,.47);
-   line(grid,P(-1,v,-1,w,h),P(1,v,-1,w,h),'#355167',.9,.47);
-   line(grid,P(-1,-1,v,w,h),P(-1,1,v,w,h),'#355167',.9,.26);
-   line(grid,P(-1,v,-1,w,h),P(-1,v,1,w,h),'#355167',.9,.26);
-   line(grid,P(v,-1,-1,w,h),P(v,-1,1,w,h),'#355167',.9,.26);
+  const t=-1+2*i/5;
+  line(grid,project(t,-1,-1,w,h),project(t,1,-1,w,h),'#3a5467',.35);
+  line(grid,project(-1,t,-1,w,h),project(1,t,-1,w,h),'#3a5467',.35);
+  line(grid,project(-1,-1,t,w,h),project(-1,1,t,w,h),'#3a5467',.2);
+  line(grid,project(-1,t,-1,w,h),project(-1,t,1,w,h),'#3a5467',.2);
+  line(grid,project(t,-1,-1,w,h),project(t,-1,1,w,h),'#3a5467',.2);
  }
- // Cube edges.
- for(const a of [-1,1]) for(const b of [-1,1]){
-   line(grid,P(a,b,-1,w,h),P(a,b,1,w,h),'#6086a0',1.2,.52);
-   line(grid,P(a,-1,b,w,h),P(a,1,b,w,h),'#6086a0',1.2,.52);
-   line(grid,P(-1,a,b,w,h),P(1,a,b,w,h),'#6086a0',1.2,.52);
+ for(const a of [-1,1])for(const b of [-1,1]){
+  line(grid,project(a,b,-1,w,h),project(a,b,1,w,h),'#7da3b9',.48,1.05);
+  line(grid,project(a,-1,b,w,h),project(a,1,b,w,h),'#7da3b9',.48,1.05);
+  line(grid,project(-1,a,b,w,h),project(1,a,b,w,h),'#7da3b9',.48,1.05);
  }
- svg.appendChild(grid);
- const axis=S('g');
- // Numeric ticks directly attached to three edges.
- [135,140,145,150,155].forEach(v=>{const pos=P(V.sa(v),-1,-1,w,h);mark(axis,pos,String(v),0,18,10,'#a9bdd0')});
- [45,55,65,75,82].forEach(v=>{const pos=P(-1,V.er(v),-1,w,h);mark(axis,pos,String(v),-17,7,10,'#a9bdd0')});
- [20,25,30,35,40,45].forEach(v=>{const pos=P(-1,-1,V.ac(v),w,h);mark(axis,pos,String(v),-17,3,10,'#a9bdd0')});
- mark(axis,P(1,-1,-1,w,h),'SA · forefoot',4,-19,13,'#9fe3f0','end');
- mark(axis,P(-1,1,-1,w,h),'ER · forefoot',-6,29,13,'#f4cd91','start');
- mark(axis,P(-1,-1,1,w,h),'Asker C',0,-19,13,'#b7d1e0');
- svg.appendChild(axis);
- const points=S('g');
- const ordered=chartShoes.map(s=>({...s,pos:pt(s,w,h)})).sort((a,b)=>b.pos.depth-a.pos.depth);
+ svg.append(grid);
+ const axis=element('g');
+ const axisTicks=(k,minStep=1)=>{
+  const [low,high]=bounds[k],rough=(high-low)/4;
+  const mag=10**Math.floor(Math.log10(rough));const steps=[1,2,2.5,5,10].map(v=>v*mag);const step=steps.find(x=>x>=rough)||10*mag;
+  const vals=[];for(let v=Math.ceil(low/step)*step;v<=high;v+=step)vals.push(v);
+  return vals.map(v=>({v,n:(v-low)/(high-low)*2-1}));
+ };
+ for(const t of axisTicks('weight'))label(axis,project(t.n,-1,-1,w,h),fmt(t.v,0),0,17,'#95b2c5',9);
+ for(const t of axisTicks('sa'))label(axis,project(-1,t.n,-1,w,h),fmt(t.v,0),-13,4,'#95b2c5',9);
+ for(const t of axisTicks('er'))label(axis,project(-1,-1,t.n,w,h),fmt(t.v,0),-14,4,'#95b2c5',9);
+ label(axis,project(1,-1,-1,w,h),'Waga (g)',0,-21,'#c4dbf3',12,'end');
+ label(axis,project(-1,1,-1,w,h),'SA · forefoot',-3,28,'#8fe3ef',12,'start');
+ label(axis,project(-1,-1,1,w,h),'ER · forefoot (%)',-3,-20,'#f9cd90',12,'start');
+ svg.append(axis);
+ const dots=element('g');
+ const ordered=shown.map(s=>({...s,p:project(...vec(s),w,h)})).sort((a,b)=>b.p.depth-a.p.depth);
  for(const s of ordered){
-  const p=s.pos,focus=selected===s.rank;
-  if(focus)points.appendChild(S('circle',{cx:p.x,cy:p.y,r:21,fill:colorER(s.er),opacity:.26,filter:'url(#point-halo)'}));
-  const circle=S('circle',{cx:p.x,cy:p.y,r:focus?12:8,fill:colorER(s.er),stroke:focus?'#fff':'#d7ecf6','stroke-width':focus?2.2:1,'data-rank':s.rank,style:'cursor:pointer'});
-  circle.addEventListener('pointermove',ev=>{if(drag)return;tooltip.innerHTML=`<b>${esc(s.name)}</b><span>#${s.rank} · SA ${fmt(s.sa)} · ER ${fmt(s.er)}% · AC ${fmt(s.ac)}</span>`;tooltip.style.display='block';const br=plot.getBoundingClientRect();tooltip.style.left=`${clamp(ev.clientX-br.left+14,8,br.width-222)}px`;tooltip.style.top=`${clamp(ev.clientY-br.top-53,8,br.height-80)}px`});
-  circle.addEventListener('pointerleave',()=>{tooltip.style.display='none'});
-  circle.addEventListener('click',ev=>{if(dragged)return;selected=s.rank;setRow();draw()});
-  points.appendChild(circle);
-  if([1,2,3,8,17].includes(s.rank)||focus)mark(points,p,String(s.rank),12,-9,11,focus?'#fff':'#d8eaf5','start');
+  const isSelected=selected===s.slug,p=s.p;
+  if(isSelected)dots.append(element('circle',{cx:p.x,cy:p.y,r:17,fill:'#f6f8fc',opacity:.21}));
+  const circle=element('circle',{cx:p.x,cy:p.y,r:isSelected?9:6,fill:colorER(s.er),stroke:isSelected?'#ffffff':'#d4eefa','stroke-width':isSelected?2:0.8,'data-slug':s.slug,style:'cursor:pointer'});
+  circle.addEventListener('click',e=>{e.stopPropagation();if(dragged)return;selectShoe(s.slug)});
+  // Larger touch target without changing visible dot diameter.
+  const hit=element('circle',{cx:p.x,cy:p.y,r:13,fill:'transparent','data-slug':s.slug,style:'cursor:pointer'});
+  hit.addEventListener('click',e=>{e.stopPropagation();if(dragged)return;selectShoe(s.slug)});
+  hit.addEventListener('pointerenter',()=>{if(!drag&&selected!==s.slug)circle.setAttribute('r',8)});
+  hit.addEventListener('pointerleave',()=>{if(!drag&&selected!==s.slug)circle.setAttribute('r',6)});
+  dots.append(circle,hit);
+  if(isSelected)label(dots,p,String(s.rank),13,-10,'#fff',10,'start');
  }
- svg.appendChild(points);
+ svg.append(dots);
+ if(selected)showPopup(shown.find(s=>s.slug===selected));
 }
-function setRow(){table.querySelectorAll('tr').forEach(r=>r.classList.toggle('selected',Number(r.dataset.rank)===selected));}
-for(const tr of table.rows){tr.addEventListener('click',ev=>{if(ev.target.closest('a'))return;selected=Number(tr.dataset.rank);setRow();draw();if(selected!==4)plot.scrollIntoView({behavior:'smooth',block:'center'});});tr.addEventListener('keydown',ev=>{if(ev.key==='Enter'&&!ev.target.closest('a')){ev.preventDefault();tr.click()}})}
-svg.addEventListener('pointerdown',ev=>{drag={x:ev.clientX,y:ev.clientY,yaw,pitch};dragged=false;svg.setPointerCapture(ev.pointerId);tooltip.style.display='none'});
-svg.addEventListener('pointermove',ev=>{if(!drag)return;const dx=ev.clientX-drag.x,dy=ev.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>5)dragged=true;yaw=drag.yaw+dx*.008;pitch=clamp(drag.pitch+dy*.008,-1.3,1.3);draw()});
-const endDrag=()=>{drag=null;window.setTimeout(()=>dragged=false,20)};
-svg.addEventListener('pointerup',endDrag);svg.addEventListener('pointercancel',endDrag);
-svg.addEventListener('wheel',ev=>{ev.preventDefault();zoom=clamp(zoom*(ev.deltaY>0?.91:1.09),.68,1.5);draw()},{passive:false});
-document.getElementById('reset').addEventListener('click',()=>{yaw=-.73;pitch=.48;zoom=1;selected=null;setRow();draw()});
-new ResizeObserver(draw).observe(plot);draw();
-
-</script></body></html>
+svg.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw,pitch};dragged=false});
+svg.addEventListener('pointermove',e=>{if(!drag)return;let dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)<4&&!dragged)return;if(!dragged){dragged=true;svg.setPointerCapture(e.pointerId)}yaw=drag.yaw+dx*.008;pitch=clamp(drag.pitch+dy*.008,-1.3,1.3);popup.hidden=true;renderChart()});
+function endDrag(){drag=null;setTimeout(()=>{dragged=false},25)}svg.addEventListener('pointerup',endDrag);svg.addEventListener('pointercancel',endDrag);
+svg.addEventListener('wheel',e=>{e.preventDefault();zoom=clamp(zoom*(e.deltaY>0?.92:1.085),.62,1.8);renderChart()},{passive:false});
+// Touch pinch-to-zoom on capable mobile browsers.
+let pinch=0;svg.addEventListener('touchstart',e=>{if(e.touches.length===2)pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)},{passive:true});
+svg.addEventListener('touchmove',e=>{if(e.touches.length!==2)return;const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(pinch){zoom=clamp(zoom*d/pinch,.62,1.8);renderChart()}pinch=d},{passive:true});
+svg.addEventListener('touchend',()=>{pinch=0},{passive:true});
+el('close-popup').addEventListener('click',()=>{selected=null;popup.hidden=true;for(const tr of tbody.rows)tr.classList.remove('selected');renderChart()});
+svg.addEventListener('click',e=>{if(!e.target.dataset?.slug&&(!dragged)){selected=null;popup.hidden=true;for(const tr of tbody.rows)tr.classList.remove('selected');renderChart()}});
+el('sort').addEventListener('change',e=>{mode=e.target.value;filterData()});
+el('reset').addEventListener('click',()=>{yaw=-.72;pitch=.49;zoom=1;selected=null;popup.hidden=true;for(const tr of tbody.rows)tr.classList.remove('selected');renderChart()});
+if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>{if(shown.length)renderChart()}).observe(plot);
+async function init(){
+ let lastError;
+ for(const url of SOURCES){
+  try{
+   const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
+   const text=await r.text();all=parseData(text);filterData();
+   el('loading').hidden=true;el('status').textContent='Pomiary RunRepeat · zestawienie Shoe Lab';
+   return;
+  }catch(e){lastError=e}
+ }
+ el('loading').hidden=false;el('loading').innerHTML='Nie można pobrać publicznego CSV.<br>Sprawdź połączenie z Internetem i spróbuj odświeżyć stronę.';
+ el('counter').textContent='Dane niedostępne';el('status').textContent=String(lastError?.message||'Błąd odczytu danych');
+ tbody.innerHTML='<tr><td colspan="5" style="padding:22px;text-align:center;color:#a9becc">Lista wymaga połączenia ze źródłowym plikiem CSV.</td></tr>';
+}
+init();
+</script>
+</body>
+</html>
