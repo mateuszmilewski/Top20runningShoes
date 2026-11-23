@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta name="description" content="Forefoot Lab V3: interaktywne porównanie butów biegowych – waga, amortyzacja i zwrot energii przodostopia. Pomiary RunRepeat.">
+<meta name="description" content="Forefoot Lab V4: pełna lista dostępnych rekordów butów biegowych Shoe Lab, z podglądem brakujących pomiarów. Dane pochodzą z RunRepeat.">
 <meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Forefoot Lab V3 · TOP 100</title>
+<title>Forefoot Lab V4 · Katalog modeli</title>
 <style>
 :root{color-scheme:dark;--bg:#090e17;--panel:#101c2b;--line:#26394c;--text:#eaf3fd;--muted:#91a5b9;--blue:#82ddeb;--gold:#f9c981}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 70% 32% at 52% -7%,#1a3651,transparent 80%),var(--bg);color:var(--text);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
@@ -28,18 +28,30 @@ footer{margin-top:30px;border-top:1px solid var(--line);padding-top:20px}footer 
 @media(max-width:700px){th:last-child,td:last-child{position:sticky;right:0;background:#172b3d;box-shadow:-5px 0 8px #08121cb3;z-index:1}th:last-child{z-index:5}tbody tr.selected td:last-child{background:#26445a}}
 @media(max-width:430px){.tools{gap:10px}.tool-title{font-size:9px}.tools button{padding:7px 8px}.search-wrap{min-width:100%}.search-strip .muted{flex:1}#plot{height:485px;min-height:460px}.slider-group{gap:4px}.tools input[type=range]{width:67px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.catalog-status{margin:12px 16px 2px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.catalog-status>div{border:1px solid #2f4b60;background:#10273b;border-radius:9px;padding:9px 11px;display:flex;flex-direction:column;gap:3px}
+.catalog-status b{font-size:19px;font-weight:730;color:#e7f7fe}.catalog-status span{font-size:10px;line-height:1.4;color:#99b5c7}
+.catalog-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:0 2px 12px;font-size:11px;color:#bad3e2}
+.catalog-actions label{display:flex;gap:7px;align-items:center}.catalog-actions input[type=checkbox]{accent-color:#78d7d1}
+.catalog-actions input[type=file]{max-width:205px;font-size:10px;border:0;padding:0;background:transparent;color:#a9c6d8}
+.catalog-actions input::file-selector-button{background:#204057;color:#d7edf7;border:1px solid #3c6075;border-radius:7px;padding:6px 8px;cursor:pointer}
+.missing-measure{color:#677f90!important}.completeness{font-size:13px}.completeness.yes{color:#73d1b6}.completeness.no{color:#8b9cac}
+tr.incomplete{cursor:default}tr.incomplete .name{color:#aabfcd}
+@media(max-width:690px){.catalog-status{grid-template-columns:repeat(2,1fr);margin:10px 12px 0}.catalog-status b{font-size:16px}.catalog-status span{font-size:9px}.catalog-actions{padding:0 0 11px}}
 </style>
 </head>
 <body><main>
 <header>
- <div><p class="eyebrow">Forefoot Lab / V3 / independent research project</p><h1>TOP 100 · Weight × Forefoot</h1><p>Waga (g) × Shock absorption (SA) × Energy return (%) &nbsp;·&nbsp; Źródło pomiarów: <a href="https://runrepeat.com/" target="_blank" rel="noopener noreferrer">RunRepeat</a></p></div>
- <span class="badge">Niekomercyjny eksperyment · 2026</span>
+ <div><p class="eyebrow">Forefoot Lab / V4 / independent research project</p><h1>Katalog butów · Forefoot Lab</h1><p>Waga (g) × Shock absorption (SA) × Energy return (%) &nbsp;·&nbsp; Źródło pomiarów: <a href="https://runrepeat.com/" target="_blank" rel="noopener noreferrer">RunRepeat</a></p></div>
+ <span class="badge">Katalog RR: 672 recenzje · 23.11.2026</span>
 </header>
-<section class="panel" aria-label="Interaktywny wykres 3D">
+<section class="panel" aria-label="Interaktywny wykres 3D"><div class="source" style="padding:13px 16px 0;color:#b9d0df">V4 pokazuje wszystkie modele dostępne w zewnętrznym CSV; nie potwierdza pełnego pokrycia oficjalnego katalogu RunRepeat. <a href="https://runrepeat.com/catalog/running-shoes" target="_blank" rel="noopener noreferrer">Otwórz oficjalny katalog</a>.</div>
  <div class="panel-top"><div><h2>Interaktywny wykres 3D</h2><div class="muted chart-hint">Przeciągnij: obrót / przesuwanie · kółko lub dwa palce: zoom · kliknij punkt: szczegóły</div></div>
-  <div class="actions"><label for="sort" class="muted">TOP 100:</label><select id="sort" aria-label="Kryterium wyboru 100 modeli"><option value="weight">Najlżejsze (g) ↑</option><option value="sa">Najwyższe forefoot SA ↓</option></select><button id="reset" type="button">Resetuj widok</button></div>
+  <div class="actions"><label for="sort" class="muted">Sortuj:</label><select id="sort" aria-label="Kryterium sortowania pełnej listy"><option value="name">Nazwa A–Z</option><option value="weight">Waga (g) ↑</option><option value="sa">Forefoot SA ↓</option><option value="er">Forefoot ER ↓</option></select><button id="reset" type="button">Resetuj widok</button></div>
  </div>
- <div class="search-strip"><div class="search-wrap"><label for="shoe-search">Szukaj</label><input id="shoe-search" type="search" placeholder="Np. MagMax, Puma, Nimbus…" autocomplete="off" spellcheck="false" aria-label="Filtruj punkty i listę według nazwy buta"><button type="button" id="clear-search" title="Wyczyść wyszukiwanie">Wyczyść</button></div><span class="muted" id="search-count" role="status">—</span></div>
+ <div class="search-strip"><div class="search-wrap"><label for="shoe-search">Szukaj</label><input id="shoe-search" type="search" placeholder="Np. MagMax, Puma, Nimbus…" autocomplete="off" spellcheck="false" aria-label="Filtruj wykres i katalog według nazwy"><button type="button" id="clear-search" title="Wyczyść wyszukiwanie">Wyczyść</button></div><span class="muted" id="search-count" role="status">—</span></div>
+ <div class="catalog-status" aria-live="polite"><div><b id="catalog-total">—</b><span>Modele w źródłowym CSV</span></div><div><b id="catalog-full">—</b><span>Komplet 3 pomiarów · wykres</span></div><div><b id="catalog-missing">—</b><span>Niekompletne pomiary · tylko tabela</span></div><div><b>672</b><span>Katalog RunRepeat 23.11.2026*</span></div></div>
  <div class="tools">
   <div class="tool-group"><span class="tool-title">Widok</span><button type="button" data-view="iso" class="active">3D</button><button type="button" data-view="xy" title="Waga × Shock absorption">Waga × SA</button><button type="button" data-view="xz" title="Waga × Energy return">Waga × ER</button><button type="button" data-view="yz" title="Shock absorption × Energy return">SA × ER</button></div>
   <div class="tool-group"><span class="tool-title">Nawigacja</span><button type="button" id="rotate-mode" class="active">Obrót</button><button type="button" id="pan-mode">Przesuwanie</button><button type="button" id="zoom-out" aria-label="Oddal">−</button><button type="button" id="zoom-in" aria-label="Przybliż">+</button><button type="button" class="focus-button" id="focus" disabled>⌖ Wycentruj punkt</button></div>
@@ -54,16 +66,17 @@ footer{margin-top:30px;border-top:1px solid var(--line);padding-top:20px}footer 
  </div>
  <div class="chart-bar"><span><span class="light-dot"></span>Kolor = Energy return forefoot</span><span id="counter">Punkty: —</span><span id="status">Źródło: Shoe Lab / RunRepeat</span></div>
 </section>
-<section id="ranking"><div class="rank-head"><div><h2>Lista modeli</h2><div class="muted">Kliknij wiersz, aby zaznaczyć i wycentrować jego punkt na wykresie</div></div><span class="muted" id="rank-label">TOP 100 · masa rosnąco</span></div>
- <div class="table-panel"><div class="table-scroll"><table><thead><tr><th>#</th><th>Model</th><th>Waga (g)</th><th>Forefoot SA</th><th>Forefoot ER</th><th>Recenzje</th></tr></thead><tbody id="shoes"><tr><td colspan="6" style="text-align:center;color:#9aafc0">Pobieranie danych…</td></tr></tbody></table></div>
- <div class="table-foot">Wyszukiwanie obejmuje pełną bazę, również buty spoza domyślnego TOP 100. Cyfry <b>1</b> = recenzja RunRepeat, <b>2</b> = wyszukiwanie recenzji Doctors of Running, <b>3</b> = wyszukiwanie recenzji RTINGS; linki 2 i 3 mogą nie prowadzić do konkretnego testu, jeśli dany model nie został opisany. Waga pojedynczego buta w rozmiarze testowym.</div></div>
+<section id="ranking"><div class="rank-head"><div><h2>Wszystkie dostępne modele</h2><div class="muted">Wykres obejmuje tylko modele z wagą, forefoot SA i forefoot ER. Brak pomiaru nie usuwa buta z listy.</div></div><span class="muted" id="rank-label">Wszystkie rekordy źródła</span></div>
+ <div class="catalog-actions"><label><input id="only-full" type="checkbox"> Pokaż w tabeli wyłącznie modele z kompletem pomiarów</label><label class="import-label" for="import-csv">Wczytaj własny CSV <input type="file" id="import-csv" accept=".csv,text/csv"></label></div>
+ <div class="table-panel"><div class="table-scroll"><table><thead><tr><th>#</th><th>Model</th><th>Waga (g)</th><th>Forefoot SA</th><th>Forefoot ER</th><th>Komplet</th><th>Recenzje</th></tr></thead><tbody id="shoes"><tr><td colspan="7" style="text-align:center;color:#9aafc0">Pobieranie danych…</td></tr></tbody></table></div>
+ <div class="table-foot">Lista pokazuje wszystkie rekordy pobranego zestawu Shoe Lab, niekoniecznie wszystkie 672 modele oficjalnego katalogu RunRepeat. Znak — oznacza brak pomiaru; wtedy but nie jest umieszczany na wykresie. Własny CSV jest analizowany lokalnie w przeglądarce i nie trafia na serwer. Cyfry <b>1</b> = recenzja RunRepeat, <b>2</b> = wyszukiwanie recenzji Doctors of Running, <b>3</b> = wyszukiwanie recenzji RTINGS; linki 2 i 3 mogą nie prowadzić do konkretnego testu, jeśli dany model nie został opisany. Waga pojedynczego buta w rozmiarze testowym.</div></div>
 </section>
 <footer>
  <h2>Legenda i źródła</h2>
  <div class="legend"><div class="leg-card"><b>X · Waga (g) ↓</b><span>Im niższa wartość, tym lżejszy model.</span></div><div class="leg-card"><b>Y · Shock absorption forefoot (SA) ↑</b><span>Amortyzacja uderzenia w przodostopiu w teście laboratoryjnym. Wyższy wynik = większa absorpcja.</span></div><div class="leg-card"><b>Z · Energy return forefoot (%) ↑</b><span>Zwrot energii mechanicznej w przodostopiu w kontrolowanym teście. Wyżej = większy zwrot.</span></div></div>
  <div class="color-row"><div class="gradient" aria-hidden="true"></div><span>Kolor: niższy ER (niebieski) → wyższy ER (złoty)</span></div>
- <div class="source">Pomiary laboratoryjne i oryginalne recenzje: <a href="https://runrepeat.com/" target="_blank" rel="noopener noreferrer">RunRepeat</a> · <a href="https://runrepeat.com/testing-methodology" target="_blank" rel="noopener noreferrer">Metodologia RunRepeat</a>. Dane ładowane z publicznego zestawienia <a href="https://github.com/rocker1904/shoe-lab" target="_blank" rel="noopener noreferrer">Shoe Lab (rocker1904)</a>. Nie są to własne pomiary autora tej strony. Link 1 prowadzi do RunRepeat, 2 i 3 uruchamiają wyszukiwanie z ograniczeniem do odpowiednich serwisów recenzenckich (nie są zweryfikowanymi bezpośrednimi adresami recenzji). Brak linków afiliacyjnych. Nie jest to oficjalny ranking RunRepeat.</div>
- <div class="legal">Niekomercyjna i niezależna demonstracja techniczna. Brak powiązania z RunRepeat, Shoe Lab, Doctors of Running, RTINGS ani markami obuwia. Prawa do nazw i znaków należą do ich właścicieli. Strona nie kopiuje zdjęć ani pełnych tekstów recenzji. Uznanie autorstwa i charakter niekomercyjny nie stanowią zgody na redystrybucję danych; przed upublicznieniem należy potwierdzić warunki wykorzystania z RunRepeat. W sprawach praw do treści: kontakt poprzez właściciela repozytorium GitHub. Kod wizualizacji podlega innym prawom niż dane źródłowe.</div>
+ <div class="source">Pomiary laboratoryjne i oryginalne recenzje: <a href="https://runrepeat.com/" target="_blank" rel="noopener noreferrer">RunRepeat</a> · <a href="https://runrepeat.com/testing-methodology" target="_blank" rel="noopener noreferrer">Metodologia RunRepeat</a>. Dane ładowane z publicznego zestawienia <a href="https://github.com/rocker1904/shoe-lab" target="_blank" rel="noopener noreferrer">Shoe Lab (rocker1904)</a>. Licznik 672 dotyczy oficjalnego katalogu z dnia 23 listopada 2026 r., a nie gwarantowanej liczby rekordów w zewnętrznym CSV. Zestaw Shoe Lab może pomijać modele lub zawierać inne wersje; licznik modeli źródłowych nie jest zweryfikowaną miarą pokrycia katalogu. Nie są to własne pomiary autora tej strony. Link 1 prowadzi do RunRepeat, 2 i 3 uruchamiają wyszukiwanie z ograniczeniem do odpowiednich serwisów recenzenckich (nie są zweryfikowanymi bezpośrednimi adresami recenzji). Brak linków afiliacyjnych. Nie jest to oficjalny ranking RunRepeat.</div>
+ <div class="legal">* Oficjalna liczba 672 jest migawką z 23.11.2026, a nie automatycznie aktualizowanym licznikiem. Niekomercyjna i niezależna demonstracja techniczna. Brak powiązania z RunRepeat, Shoe Lab, Doctors of Running, RTINGS ani markami obuwia. Prawa do nazw i znaków należą do ich właścicieli. Strona nie kopiuje zdjęć ani pełnych tekstów recenzji. Uznanie autorstwa i charakter niekomercyjny nie stanowią zgody na redystrybucję danych; przed upublicznieniem należy potwierdzić warunki wykorzystania z RunRepeat. W sprawach praw do treści: kontakt poprzez właściciela repozytorium GitHub. Kod wizualizacji podlega innym prawom niż dane źródłowe.</div>
 </footer>
 </main>
 <script>
@@ -75,7 +88,7 @@ const SOURCES=[
 ];
 const el=id=>document.getElementById(id);
 const plot=el('plot'),tbody=el('shoes'),popup=el('popup'),svgNS='http://www.w3.org/2000/svg';
-let all=[],base=[],shown=[],mode='weight',query='',selected=null;
+let all=[],base=[],shown=[],plotted=[],mode='name',query='',selected=null,onlyFull=false;
 let yaw=-.72,pitch=.49,zoom=1,panX=0,panY=0,pointSize=6,navigation='rotate',view='iso';
 let bounds=null,positioned=[],pointerState=new Map(),lastTap=null,loadError=null;
 const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
@@ -96,16 +109,16 @@ function csvRows(src){
 }
 function numeric(s){if(s==null)return null;const text=String(s).trim().replace(/\s/g,'');if(!text||text==='—'||text.toLowerCase()==='null')return null;const n=Number(text.replace(',','.'));return Number.isFinite(n)?n:null}
 function parseData(csv){
- const rows=csvRows(csv);if(rows.length<110)throw Error('Zbyt mało wierszy w źródłowym CSV.');
+ const rows=csvRows(csv);if(rows.length<2)throw Error('Zbyt mało wierszy w źródłowym CSV.');
  const h=rows.shift().map(slugify);
  const locate=(choices,pattern)=>{for(const c of choices){const i=h.indexOf(c);if(i>=0)return i}return h.findIndex(pattern)};
  const ix={name:locate(['name','shoe-name','title'],s=>s==='model'),brand:locate(['brand'],s=>s.includes('brand')),slug:locate(['slug'],s=>s==='slug'),url:locate(['url','review-url'],s=>s.endsWith('url')),weight:locate(['weight','weight-g','weight-grams','shoe-weight'],s=>/^weight-/.test(s)),sa:locate(['shock-absorption-forefoot','forefoot-shock-absorption','shock-absorption-front'],s=>s.includes('shock')&&s.includes('absorp')&&s.includes('forefoot')),er:locate(['energy-return-forefoot','forefoot-energy-return'],s=>s.includes('energy')&&s.includes('return')&&s.includes('forefoot'))};
- if(ix.weight<0||ix.sa<0||ix.er<0||ix.name<0)throw Error('Nie odnaleziono potrzebnych kolumn w CSV (weight, forefoot SA i ER).');
+ if(ix.name<0)throw Error('Brak kolumny name/model w źródłowym CSV.');
  const result=[],seen=new Set();
  for(const row of rows){
   const get=k=>ix[k]>=0?(row[ix[k]]||'').trim():'';
   const weight=numeric(get('weight')),sa=numeric(get('sa')),er=numeric(get('er'));
-  if(!(weight>0&&weight<700&&sa>0&&sa<300&&er>0&&er<=100))continue;
+  const w=weight>0&&weight<700?weight:null, a=sa>0&&sa<300?sa:null, e=er>0&&er<=100?er:null;
   const name=get('name'),brand=get('brand'),slug=get('slug')||slugify(name);
   const display=(brand&&!name.toLowerCase().startsWith(brand.toLowerCase()))?brand+' '+name:name;
   if(!display||seen.has(slug))continue;
@@ -113,9 +126,9 @@ function parseData(csv){
   const candidate=get('url');
   let url='https://runrepeat.com/'+encodeURIComponent(slug);
   if(/^https:\/\/([\w-]+\.)?runrepeat\.com\//i.test(candidate))url=candidate;
-  result.push({name:display,slug,url,weight,sa,er});
+  result.push({name:display,slug,url,weight:w,sa:a,er:e,complete:w!==null&&a!==null&&e!==null});
  }
- if(result.length<100)throw Error(`Źródło zawiera tylko ${result.length} modeli z kompletnymi pomiarami.`);
+ if(!result.length)throw Error('Źródło nie zawiera nazw butów.');
  return result;
 }
 
@@ -132,39 +145,44 @@ function attachReviewLinks(parent,s){
   const a=document.createElement('a');a.href=d.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=d.label;a.title=d.title;a.setAttribute('aria-label',d.title+' — '+s.name);parent.append(a);
  }
 }
-function getBase(){return [...all].sort((a,b)=>mode==='weight'?(a.weight-b.weight||b.sa-a.sa):(b.sa-a.sa||a.weight-b.weight)).slice(0,100).map((s,i)=>({...s,rank:i+1}));}
-function updateData(resetSelect=true){
- base=getBase();
- bounds=makeBounds(base);
- applySearch(resetSelect);
-}
+const measurable=s=>s.complete===true;
+const cmpNullable=(a,b,key,desc=false)=>{
+ const x=a[key],y=b[key];if(x==null&&y==null)return a.name.localeCompare(b.name,'pl');if(x==null)return 1;if(y==null)return -1;
+ return (desc?y-x:x-y)||a.name.localeCompare(b.name,'pl');
+};
+function sorted(list){return [...list].sort((a,b)=>mode==='name'?a.name.localeCompare(b.name,'pl'):mode==='weight'?cmpNullable(a,b,'weight'):mode==='sa'?cmpNullable(a,b,'sa',true):cmpNullable(a,b,'er',true));}
+function updateData(resetSelect=true){applySearch(resetSelect);}
 function applySearch(resetSelect=false){
  const tokens=normalize(query).split(/\s+/).filter(Boolean);
- const ranked=tokens.length?[...all].sort((a,b)=>mode==='weight'?(a.weight-b.weight||b.sa-a.sa):(b.sa-a.sa||a.weight-b.weight)).map((s,i)=>({...s,rank:i+1})):base;
- shown=ranked.filter(s=>tokens.every(t=>normalize(s.name).includes(t)));
- bounds=makeBounds(shown.length?(tokens.length?shown:base):base);
- if(resetSelect||!shown.some(s=>s.slug===selected))selected=null;
+ shown=sorted(all).filter(s=>tokens.every(t=>normalize(s.name).includes(t))&&(!onlyFull||measurable(s))).map((s,i)=>({...s,rank:i+1}));
+ plotted=shown.filter(measurable);
+ bounds=makeBounds(plotted);
+ if(resetSelect||!plotted.some(s=>s.slug===selected))selected=null;
  el('focus').disabled=!selected;
  popup.hidden=true;el('hover-tip').hidden=true;
- el('rank-label').textContent=tokens.length?'Wyniki z pełnej bazy · '+(mode==='weight'?'waga rosnąco':'forefoot SA malejąco'):(mode==='weight'?'TOP 100 · najlżejsze (g) ↑':'TOP 100 · Forefoot SA ↓');
- el('search-count').textContent=shown.length+' / '+(tokens.length?all.length:base.length)+' dopasowanych';
- el('counter').textContent='Punkty: '+shown.length+' · baza: '+all.length;
+ const labels={name:'nazwa A–Z',weight:'waga rosnąco',sa:'forefoot SA malejąco',er:'forefoot ER malejąco'};
+ el('rank-label').textContent='Wszystkie dostępne rekordy · '+labels[mode];
+ el('search-count').textContent=shown.length+' / '+all.length+' modeli · '+plotted.length+' punktów';
+ el('counter').textContent='Punkty: '+plotted.length+' · tabela: '+shown.length;
+ el('loading').hidden=Boolean(bounds);
+ if(!bounds)el('loading').textContent=all.length?'Brak kompletnych punktów dla wybranego filtra. Dane częściowe są w tabeli.':'Brak danych źródłowych.';
  renderTable();renderChart();
 }
 function renderTable(){
  tbody.replaceChildren();
- if(!shown.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=6;td.textContent=all.length?'Brak butów pasujących do frazy. Wyczyść wyszukiwanie.':'Brak danych źródłowych.';td.style='text-align:center;padding:23px;color:#a9becc';tr.append(td);tbody.append(tr);return;}
+ if(!shown.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=7;td.textContent=all.length?'Brak butów pasujących do frazy. Wyczyść wyszukiwanie.':'Brak danych źródłowych.';td.style='text-align:center;padding:23px;color:#a9becc';tr.append(td);tbody.append(tr);return;}
  for(const s of shown){
   const tr=document.createElement('tr');tr.dataset.slug=s.slug;tr.tabIndex=0;
   const rank=document.createElement('td');rank.className='ranking';rank.textContent=String(s.rank).padStart(2,'0');
   const name=document.createElement('td');name.className='name';name.textContent=s.name;
-  const weight=document.createElement('td');weight.className='weight';weight.textContent=fmt(s.weight,0);
-  const sa=document.createElement('td');sa.className='sa';sa.textContent=fmt(s.sa);
-  const er=document.createElement('td');er.className='er';er.textContent=fmt(s.er)+'%';
+  const weight=document.createElement('td');weight.className='weight';weight.textContent=s.weight==null?'—':fmt(s.weight,0);if(s.weight==null)weight.classList.add('missing-measure');
+  const sa=document.createElement('td');sa.className='sa';sa.textContent=s.sa==null?'—':fmt(s.sa);if(s.sa==null)sa.classList.add('missing-measure');
+  const er=document.createElement('td');er.className='er';er.textContent=s.er==null?'—':fmt(s.er)+'%';if(s.er==null)er.classList.add('missing-measure');
   const reviews=document.createElement('td');reviews.className='review-links';attachReviewLinks(reviews,s);
-  tr.append(rank,name,weight,sa,er,reviews);
-  tr.addEventListener('click',e=>{if(e.target.closest('a'))return;selectShoe(s.slug,true,true)});
-  tr.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target===tr){e.preventDefault();selectShoe(s.slug,true,true)}});
+  const completeness=document.createElement('td');completeness.className='completeness '+(s.complete?'yes':'no');completeness.textContent=s.complete?'●':'—';completeness.title=s.complete?'Komplet pomiarów do wykresu':'Brakuje co najmniej jednego pomiaru';
+  tr.append(rank,name,weight,sa,er,completeness,reviews);if(!s.complete)tr.classList.add('incomplete');
+  tr.addEventListener('click',e=>{if(e.target.closest('a')||!s.complete)return;selectShoe(s.slug,true,true)});
+  tr.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target===tr&&s.complete){e.preventDefault();selectShoe(s.slug,true,true)}});
   tbody.append(tr);
  }
 }
@@ -204,17 +222,17 @@ function showPopup(s){
  popup.style.top=clamp(p.y-55,5,Math.max(5,rect.height-popup.offsetHeight-7))+'px';
 }
 function selectShoe(slug,focus=false,scroll=false){
- if(!shown.some(s=>s.slug===slug))return;
+ if(!plotted.some(s=>s.slug===slug))return;
  selected=slug;
  el('focus').disabled=false;
  if(focus)centerSelected(false);
  else renderChart();
  for(const tr of tbody.rows)tr.classList.toggle('selected',tr.dataset.slug===slug);
- showPopup(shown.find(s=>s.slug===slug));
+ showPopup(plotted.find(s=>s.slug===slug));
  if(scroll)plot.scrollIntoView({behavior:'smooth',block:'center'});
 }
 function centerSelected(update=true){
- const s=shown.find(s=>s.slug===selected);if(!s)return;
+ const s=plotted.find(s=>s.slug===selected);if(!s)return;
  const r=plot.getBoundingClientRect(),p=coords(s);
  panX+=r.width*.52-p.x;panY+=r.height*.48-p.y;
  if(update){renderChart();showPopup(s)}else renderChart();
@@ -226,7 +244,7 @@ function niceTicks(k){
  const out=[];for(let v=Math.ceil(low/step)*step;v<=high+step*.001;v+=step)out.push({v,n:(v-low)/(high-low)*2-1});return out;
 }
 function renderChart(){
- if(!bounds)return;
+ if(!bounds){svg.replaceChildren();positioned=[];return;}
  const r=plot.getBoundingClientRect(),w=Math.max(315,r.width),h=Math.max(430,r.height);
  svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.replaceChildren();
  const grid=element('g');
@@ -252,7 +270,7 @@ function renderChart(){
  label(axis,project(-1,1,-1,w,h),'SA · forefoot',-3,27,'#8fe3ef',12,'start');
  label(axis,project(-1,-1,1,w,h),'ER · forefoot (%)',-3,-18,'#f9cd90',12,'start');svg.append(axis);
  const dots=element('g');
- positioned=shown.map(s=>({shoe:s,p:project(...vec(s),w,h)}));
+ positioned=plotted.map(s=>({shoe:s,p:project(...vec(s),w,h)}));
  for(const {shoe:s,p} of [...positioned].sort((a,b)=>b.p.depth-a.p.depth)){
   const active=selected===s.slug;
   if(active)dots.append(element('circle',{cx:p.x,cy:p.y,r:pointSize+10,fill:'none',stroke:'#ffffff','stroke-opacity':.65,'stroke-width':1.5}));
@@ -261,7 +279,7 @@ function renderChart(){
   if(active)label(dots,p,s.name.length>29?s.name.slice(0,28)+'…':s.name,10,-pointSize-11,'#fff',10,'start');
  }
  svg.append(dots);
- if(selected)showPopup(shown.find(s=>s.slug===selected));
+ if(selected)showPopup(plotted.find(s=>s.slug===selected));
  syncControls();
 }
 function syncControls(){
@@ -321,6 +339,17 @@ el('pitch-slider').addEventListener('input',e=>{pitch=Number(e.target.value)*Mat
 el('size-slider').addEventListener('input',e=>{pointSize=Number(e.target.value);renderChart()});
 el('close-popup').addEventListener('click',clearSelection);
 el('sort').addEventListener('change',e=>{mode=e.target.value;panX=panY=0;updateData(true)});
+el('only-full').addEventListener('change',e=>{onlyFull=e.target.checked;applySearch(true)});
+el('import-csv').addEventListener('change',async e=>{
+ const f=e.target.files?.[0];if(!f)return;
+ try{
+  const newData=parseData(await f.text());all=newData;query='';el('shoe-search').value='';onlyFull=false;el('only-full').checked=false;
+  el('catalog-total').textContent=String(all.length);
+  el('catalog-full').textContent=String(all.filter(s=>s.complete).length);
+  el('catalog-missing').textContent=String(all.filter(s=>!s.complete).length);
+  applySearch(true);el('status').textContent='Lokalnie wczytany CSV: '+f.name+' · dane nie są wysyłane';
+ }catch(err){alert('Błąd importu CSV: '+err.message)}
+});
 el('shoe-search').addEventListener('input',e=>{query=e.target.value;applySearch()});
 el('clear-search').addEventListener('click',()=>{el('shoe-search').value='';query='';applySearch();el('shoe-search').focus()});
 el('reset').addEventListener('click',()=>{yaw=-.72;pitch=.49;zoom=1;panX=panY=0;view='iso';navigation='rotate';pointSize=6;clearSelection()});
@@ -330,12 +359,15 @@ async function init(){
  for(const url of SOURCES){try{
   const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
   all=parseData(await r.text());
+  el('catalog-total').textContent=String(all.length);
+  el('catalog-full').textContent=String(all.filter(s=>s.complete).length);
+  el('catalog-missing').textContent=String(all.filter(s=>!s.complete).length);
   updateData(true);
-  el('loading').hidden=true;el('status').textContent='Pomiary RunRepeat · zestawienie Shoe Lab';return;
+  el('status').textContent='Pomiary RunRepeat · zestawienie Shoe Lab · niezweryfikowane pełne pokrycie katalogu';return;
  }catch(e){lastError=e}}
  el('loading').hidden=false;el('loading').textContent='Nie udało się pobrać CSV ze źródła Shoe Lab. Odśwież stronę później lub sprawdź adres pliku w repozytorium źródłowym.';
  el('counter').textContent='Dane niedostępne';el('status').textContent='Błąd: '+String(lastError?.message||'nieznany');
- tbody.innerHTML='<tr><td colspan="6" style="padding:22px;text-align:center;color:#a9becc">Lista wymaga działającego źródłowego CSV.</td></tr>';
+ tbody.innerHTML='<tr><td colspan="7" style="padding:22px;text-align:center;color:#a9becc">Lista wymaga działającego źródłowego CSV.</td></tr>';
 }
 init();
 </script>
